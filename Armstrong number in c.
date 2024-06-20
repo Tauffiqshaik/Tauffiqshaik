@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+int n,sum=0,temp,digit;
+printf("enter the number:\n");
+scanf("%d",&n);
+temp=n;
+while(temp!=n)
+{
+digit=temp%10;
+sum=sum+(digit*digit*digit);
+temp/=10;
+}
+if(sum==n)
+printf("ARMSTRONG NUMBER");
+else
+printf("NOT ARMSTRONG NUMBER");
+return 0;
+}
