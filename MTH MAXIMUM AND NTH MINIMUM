@@ -1,0 +1,41 @@
+#include<stdio.h>
+int maximum_minimum(int a[],int m,int n,int p)
+{
+	int temp,i,j,sum,difference;
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(a[i]<a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	sum=a[m-1]+a[n-p];
+	difference=a[m-1]-a[n-p];
+	printf("M_MAXIMUM =%d\n",a[m-1]);
+	printf("M_MINIMUM =%d\n",a[n-p]);
+	printf("SUM OF THE MAXIMUM AND MINIMUM =%d\n",sum);
+	printf("DIFFERENCE OF THE MAXIMUM AND MINIMUM =%d\n",difference);
+	return 0;
+}
+int main()
+{
+	int arr[100];
+	int n,i,m,p;
+	printf("enter the number of array :\n");
+	scanf("%d",&n);
+	printf("enter the number of elements :\n");
+	for(i=0;i<n;i++)
+	scanf("%d",&arr[i]);
+	printf("ENTER THE MTH MAXIMUM :\n");
+	scanf("%d",&m);
+	printf("ENTER THE MTH MINIMUM :\n");
+	scanf("%d",&p);
+	maximum_minimum(arr,n,m,p);
+	return 0;
+	
+}
